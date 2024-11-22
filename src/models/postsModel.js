@@ -9,6 +9,14 @@ export async function getTodosPosts() {
     return colecao.find().toArray();
 }
 
+export async function criarPost (novoPost) {
+    const db = conexao.db("imersao-instabytes");
+    const colecao = db.collection("posts");
+    
+    return colecao.insertOne(novoPost);
+
+}
+
 // export function buscarPostPorId (id) {
 //     return posts.findIndex((post) => {
 //         return post.id === Number(id);
